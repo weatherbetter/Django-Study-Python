@@ -5,7 +5,9 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'main.html')
+    lists = Memo.objects.all()
+    data = {'lists':lists}
+    return render(request, 'main.html', data)
 
 def createMemo(request):
     # memo_content = request.GET['memoContent']
