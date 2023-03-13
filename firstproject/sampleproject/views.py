@@ -26,3 +26,18 @@ def methodMemo(request):
         return HttpResponse('GET')
     if request.method == "POST":
         return HttpResponse('POST')
+    
+def edit(request, idx):
+    article = Memo.objects.get(id=idx)
+    data = {'article' : article}
+    return render(request, 'edit.html', data)
+
+def update(request):
+    idx = request.POST['id']
+    memoContent = request.POST['memoContent']
+
+    db_article = Memo.objects.get(id=idx)
+    db_article.memo_text = memoContent
+    db_article.save()
+
+    return HttpResponseRedirect(reverse('index'))

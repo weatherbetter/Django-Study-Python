@@ -21,6 +21,7 @@
         <ul>
             {% for item in lists%}
                 <li><b>{{item.id}}.</b> {{item.memo_text}} {{item.published_date|date:'Y-m-d'}}</li>
+                [<a href="./edit/{{item.id}}">수정</a>]
             {% endfor %}
         </ul>
     </div>

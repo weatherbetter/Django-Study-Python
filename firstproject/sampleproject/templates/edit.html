@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./update/" method="post" id="memoForm">
+    {% csrf_token %}
+    <input type="hidden" name = "id" value="{{article.id}}">
+        <label for="memo">메모</label>
+        <input value="{{article.memo_text}}" type="text" name="memoContent" id="memo" size="50" placeholder="text sample" autocomplete="off">
+        <button type="submit" form="memoForm">수정</button>
+    </form>
+</body>
+</html>
