@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from .models import *
+
 # Create your views here.
 def index(request):
     return render(request, 'main.html')
@@ -13,4 +15,6 @@ def createMemo(request):
     article = Memo(memo_text = memo_content)
     article.save()
 
-    return HttpResponse('createMemo : ' + memo_content)
+    # return HttpResponse('createMemo : ' + memo_content)
+    ## reverse + name > 리다이렉트
+    return HttpResponseRedirect(reverse('index'))
