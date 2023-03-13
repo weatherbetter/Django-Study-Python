@@ -41,3 +41,8 @@ def update(request):
     db_article.save()
 
     return HttpResponseRedirect(reverse('index'))
+
+def delete(request, idx):
+    db_article = Memo.objects.get(id=idx)
+    db_article.delete()
+    return HttpResponseRedirect(reverse('index'))
