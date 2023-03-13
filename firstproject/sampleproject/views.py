@@ -3,8 +3,10 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Hello world')
+    return render(request, 'main.html')
 
-def createMeomo(request):
-    memo_content = request.GET['memoContent']
-    return HttpResponse('createMeomo : ' + memo_content)
+def createMemo(request):
+    # memo_content = request.GET['memoContent']
+    memo_content = request.POST['memoContent']
+
+    return HttpResponse('createMemo : ' + memo_content)
