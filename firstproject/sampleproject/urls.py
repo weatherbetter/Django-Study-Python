@@ -4,5 +4,7 @@ from . import views
 urlpatterns = [
     # http://localhost:8000/{application name}/
     path('', views.index, name = 'index'),
-    path('createMemo/', views.createMemo)
+    path('createMemo/', views.createMemo),
+    # Get, Post
+    path('methodMemo/', views.methodMemo)
 ]

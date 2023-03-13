@@ -20,3 +20,9 @@ def createMemo(request):
     # return HttpResponse('createMemo : ' + memo_content)
     ## reverse + name > 리다이렉트
     return HttpResponseRedirect(reverse('index'))
+
+def methodMemo(request):
+    if request.method == "GET":
+        return HttpResponse('GET')
+    if request.method == "POST":
+        return HttpResponse('POST')

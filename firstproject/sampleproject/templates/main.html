@@ -25,5 +25,14 @@
         </ul>
     </div>
 
+    <form action="http://127.0.0.1:8000/sampleproject/methodMemo/" method="get">
+        <button>Get button</button>
+    </form>
+    <br>
+    <form action="http://127.0.0.1:8000/sampleproject/methodMemo/" method="post">
+        {% csrf_token %}
+        <button>Post button</button>
+    </form>
+
 </body>
 </html>
