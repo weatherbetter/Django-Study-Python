@@ -7,7 +7,7 @@ from .models import *
 def index(request):
     lists = Memo.objects.all()
     data = {'lists':lists}
-    return render(request, 'main.html', data)
+    return render(request, 'sampleproject/main.html', data)
 
 def createMemo(request):
     # memo_content = request.GET['memoContent']
@@ -30,7 +30,7 @@ def methodMemo(request):
 def edit(request, idx):
     article = Memo.objects.get(id=idx)
     data = {'article' : article}
-    return render(request, 'edit.html', data)
+    return render(request, 'sampleproject/edit.html', data)
 
 def update(request):
     idx = request.POST['id']
